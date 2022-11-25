@@ -64,10 +64,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:5.0.1'
     implementation 'org.greenrobot:eventbus:3.3.1'
-    // https://mvnrepository.com/artifact/com.google.vr/sdk-base
-    implementation 'com.google.vr:sdk-audio:1.160.0'
-    implementation("com.google.vr:sdk-base:1.190.0")
-    implementation 'com.google.vr:sdk-panowidget:1.170.0'
+
 
 
 }
