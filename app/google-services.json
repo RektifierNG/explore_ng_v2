@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "975403751599",
+    "project_id": "explore-ng",
+    "storage_bucket": "explore-ng.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975403751599:android:89639f1c7cb5cc432c1c5a",
+        "android_client_info": {
+          "package_name": "com.ivancic.explorengv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975403751599-di619ppoa0q4dpkqvoaeqeiupdfqfo46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ivancic.explorengv2",
+            "certificate_hash": "07f8ae8f513337018a883137d2371ecc685747cb"
+          }
+        },
+        {
+          "client_id": "975403751599-nv0k1uoi378smvua6u3ki5ibjoaqld3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhOI-r7jHg0AMZFBz8lN8NF1pOoqLEGOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975403751599-nv0k1uoi378smvua6u3ki5ibjoaqld3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

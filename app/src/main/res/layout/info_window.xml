@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        app:autoSizeTextType="uniform"
+        android:text="Elektrotehnička i ekonomska škola Nova Gradiška i  Informativno pravni centar – IPC iz Slavonskog Broda,  projektni partneri, održali su 27.10.2022. javnu akciju u okviru projekta „Stop vršnjačkom nasilju“ na Trgu kralja Tomislava u Novoj Gradiški. Šireći ideju borbe protiv vršnjačkog Internet (cyber) nasilja, vrijedni učenici-volonteri dijelili su građanima i prolaznicima promotivne materijale, podižući pri tome svijest građana o ovom raširenom problemu među mladima.
+Svojim pisanim porukama poručili su da je neprihvatljiv  bilo koji oblik nasilja (fizičko, verbalno, psihološko) i da moramo biti pažljivi u online okruženju jednako kao i u stvarnom životu. Projekt je financiran od strane Središnjeg državnog ureda za demografiju i mlade Republike Hrvatske."
+        android:textColor="@color/black" />
+
+    <ScrollView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_marginStart="5dp"
+                android:text="Elektrotehnička i ekonomska škola Nova Gradiška i  Informativno pravni centar – IPC iz Slavonskog Broda,  projektni partneri, održali su 27.10.2022. javnu akciju u okviru projekta „Stop vršnjačkom nasilju“ na Trgu kralja Tomislava u Novoj Gradiški. Šireći ideju borbe protiv vršnjačkog Internet (cyber) nasilja, vrijedni učenici-volonteri dijelili su građanima i prolaznicima promotivne materijale, podižući pri tome svijest građana o ovom raširenom problemu među mladima.
+Svojim pisanim porukama poručili su da je neprihvatljiv  bilo koji oblik nasilja (fizičko, verbalno, psihološko) i da moramo biti pažljivi u online okruženju jednako kao i u stvarnom životu. Projekt je financiran od strane Središnjeg državnog ureda za demografiju i mlade Republike Hrvatske."
+
+                android:textColor="@color/black" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/forward"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/forward"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/back"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_baseline_arrow_forward_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/move_button"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@android:color/darker_gray"
+            android:text="@string/skupi"
+            android:textColor="@color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/delete_button"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/darker_gray"
+            android:text="@string/zatvori"
+            android:textColor="@color/black" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
