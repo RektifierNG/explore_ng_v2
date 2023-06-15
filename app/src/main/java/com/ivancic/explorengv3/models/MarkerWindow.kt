@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.models
+package com.ivancic.explorengv3.models
 
 
 import android.content.Context
@@ -16,8 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.ivancic.explorengv2.activities.Menu
-import com.ivancic.explorengv2.R
+import com.ivancic.explorengv3.activities.Menu
+import com.ivancic.explorengv3.R
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.infowindow.InfoWindow
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
@@ -64,8 +64,8 @@ class MarkerWindow( private val mV: MapView, private val contr: Context, private
         var a=contr.getString(R.string.Distance)
 
          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val latdist = sqrt((marked.lat!!.toDouble()- com.ivancic.explorengv2.activities.MainActivity.lon)*(marked.lat!!.toDouble()- com.ivancic.explorengv2.activities.MainActivity.lon))*111139
-            val londist = sqrt((marked.lon!!.toDouble()- com.ivancic.explorengv2.activities.MainActivity.lat)*(marked.lon!!.toDouble()- com.ivancic.explorengv2.activities.MainActivity.lat))*111139
+            val latdist = sqrt((marked.lat!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lon)*(marked.lat!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lon))*111139
+            val londist = sqrt((marked.lon!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lat)*(marked.lon!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lat))*111139
             dist=latdist+londist
             dist=(dist * 100.0).roundToInt() / 100.0
             a+="$dist m"

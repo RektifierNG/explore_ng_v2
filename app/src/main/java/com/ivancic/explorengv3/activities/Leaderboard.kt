@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.activities
+package com.ivancic.explorengv3.activities
 
 import android.content.Intent
 import android.content.res.Resources
@@ -7,10 +7,10 @@ import android.os.Bundle
 import androidx.core.os.ConfigurationCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
-import com.ivancic.explorengv2.adapters.CustomAdapter
-import com.ivancic.explorengv2.R
-import com.ivancic.explorengv2.databinding.ActivityLeaderboardBinding
-import com.ivancic.explorengv2.models.User4Leaderboard
+import com.ivancic.explorengv3.adapters.CustomAdapter
+import com.ivancic.explorengv3.R
+import com.ivancic.explorengv3.databinding.ActivityLeaderboardBinding
+import com.ivancic.explorengv3.models.User4Leaderboard
 import java.util.Locale
 
 class Leaderboard : AppCompatActivity() {

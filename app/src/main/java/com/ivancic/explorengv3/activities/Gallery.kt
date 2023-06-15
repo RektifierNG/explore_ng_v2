@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.activities
+package com.ivancic.explorengv3.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 
-import com.ivancic.explorengv2.adapters.GalleryAdapter
-import com.ivancic.explorengv2.databinding.ActivityGalleryBinding
-import com.ivancic.explorengv2.models.Marked
+import com.ivancic.explorengv3.adapters.GalleryAdapter
+import com.ivancic.explorengv3.databinding.ActivityGalleryBinding
+import com.ivancic.explorengv3.models.Marked
 
 
 class Gallery : AppCompatActivity() {

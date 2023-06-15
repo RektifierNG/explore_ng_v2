@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.activities
+package com.ivancic.explorengv3.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -11,11 +11,11 @@ import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.ivancic.explorengv2.R
-import com.ivancic.explorengv2.databinding.ActivityProfilBinding
-import com.ivancic.explorengv2.login.LoginActivity
-import com.ivancic.explorengv2.models.GlideApp
-import com.ivancic.explorengv2.models.User
+import com.ivancic.explorengv3.R
+import com.ivancic.explorengv3.databinding.ActivityProfilBinding
+import com.ivancic.explorengv3.login.LoginActivity
+import com.ivancic.explorengv3.models.GlideApp
+import com.ivancic.explorengv3.models.User
 
 class Profil : AppCompatActivity() {
     private val REQUEST_CODE = 100

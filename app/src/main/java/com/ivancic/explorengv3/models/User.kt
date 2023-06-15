@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.models
+package com.ivancic.explorengv3.models
 
 data class User(
     var name: String="", var uid: String="",

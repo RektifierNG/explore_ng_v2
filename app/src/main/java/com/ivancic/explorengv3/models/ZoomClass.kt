@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.models
+package com.ivancic.explorengv3.models
 
 import android.content.Context
 import android.graphics.Matrix

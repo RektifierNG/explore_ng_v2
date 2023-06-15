@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2
+package com.ivancic.explorengv3
 
 import org.junit.Test
 

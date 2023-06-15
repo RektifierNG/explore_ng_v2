@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "975403751599",
+    "firebase_url": "https://explore-ng-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "explore-ng",
     "storage_bucket": "explore-ng.appspot.com"
   },
@@ -19,6 +20,43 @@
           "android_info": {
             "package_name": "com.ivancic.explorengv2",
             "certificate_hash": "07f8ae8f513337018a883137d2371ecc685747cb"
+          }
+        },
+        {
+          "client_id": "975403751599-nv0k1uoi378smvua6u3ki5ibjoaqld3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhOI-r7jHg0AMZFBz8lN8NF1pOoqLEGOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975403751599-nv0k1uoi378smvua6u3ki5ibjoaqld3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975403751599:android:bf1f8bfcfb7118ab2c1c5a",
+        "android_client_info": {
+          "package_name": "com.ivancic.explorengv3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975403751599-68ukef9n6brvg5qvnuqnlb207v3b86q4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ivancic.explorengv3",
+            "certificate_hash": "edd44817ae258dc7e8b99ce668e6e8675c9fb028"
           }
         },
         {

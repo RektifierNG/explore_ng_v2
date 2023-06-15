@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.adapters
+package com.ivancic.explorengv3.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.ivancic.explorengv2.databinding.UserItemBinding
-import com.ivancic.explorengv2.models.GlideApp
-import com.ivancic.explorengv2.models.User4Leaderboard
+import com.ivancic.explorengv3.databinding.UserItemBinding
+import com.ivancic.explorengv3.models.GlideApp
+import com.ivancic.explorengv3.models.User4Leaderboard
 
 class CustomAdapter(
     private val userList: ArrayList<User4Leaderboard>,

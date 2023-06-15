@@ -52,7 +52,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.ivancic.explorengv2.models.ZoomClass
+        <com.ivancic.explorengv3.models.ZoomClass
             android:id="@+id/photos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

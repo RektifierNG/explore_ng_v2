@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.activities
+package com.ivancic.explorengv3.activities
 
 import android.content.Intent
 import android.os.Build
@@ -8,9 +8,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.ivancic.explorengv2.databinding.ActivityMenuBinding
-import com.ivancic.explorengv2.models.GlideApp
-import com.ivancic.explorengv2.models.User
+import com.ivancic.explorengv3.databinding.ActivityMenuBinding
+import com.ivancic.explorengv3.models.GlideApp
+import com.ivancic.explorengv3.models.User
 
 class Menu : AppCompatActivity() {
     private var userId:String=""

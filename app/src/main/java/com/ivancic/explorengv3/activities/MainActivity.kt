@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.activities
+package com.ivancic.explorengv3.activities
 
 import android.Manifest.permission.*
 import android.annotation.SuppressLint
@@ -23,11 +23,11 @@ import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.*
-import com.ivancic.explorengv2.BuildConfig
-import com.ivancic.explorengv2.R
-import com.ivancic.explorengv2.databinding.ActivityMainBinding
-import com.ivancic.explorengv2.models.Marked
-import com.ivancic.explorengv2.models.MarkerWindow
+import com.ivancic.explorengv3.BuildConfig
+import com.ivancic.explorengv3.R
+import com.ivancic.explorengv3.databinding.ActivityMainBinding
+import com.ivancic.explorengv3.models.Marked
+import com.ivancic.explorengv3.models.MarkerWindow
 import org.osmdroid.api.IMapController
 import org.osmdroid.config.Configuration.getInstance
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory

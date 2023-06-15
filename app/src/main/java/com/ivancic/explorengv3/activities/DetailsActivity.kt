@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.activities
+package com.ivancic.explorengv3.activities
 
 import android.content.Intent
 import android.content.res.Resources
@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.os.ConfigurationCompat
 import com.google.firebase.storage.FirebaseStorage
-import com.ivancic.explorengv2.R
-import com.ivancic.explorengv2.databinding.ActivityDetailsBinding
-import com.ivancic.explorengv2.models.GlideApp
-import com.ivancic.explorengv2.models.Marked
+import com.ivancic.explorengv3.R
+import com.ivancic.explorengv3.databinding.ActivityDetailsBinding
+import com.ivancic.explorengv3.models.GlideApp
+import com.ivancic.explorengv3.models.Marked
 import java.util.*
 
 class DetailsActivity : AppCompatActivity() {

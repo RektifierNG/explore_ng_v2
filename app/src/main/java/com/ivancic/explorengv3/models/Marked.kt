@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.models
+package com.ivancic.explorengv3.models
 
 data class Marked ( var alt:Int=0, var image: String?= null, var upimage : String?=null,
                var lon: String?=null, var title : String?=null,

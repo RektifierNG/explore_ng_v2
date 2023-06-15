@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.activities
+package com.ivancic.explorengv3.activities
 
 
 import android.content.Intent
@@ -6,9 +6,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
-import com.ivancic.explorengv2.R
-import com.ivancic.explorengv2.databinding.ActivityLauncherBinding
-import com.ivancic.explorengv2.login.LoginActivity
+import com.ivancic.explorengv3.R
+import com.ivancic.explorengv3.databinding.ActivityLauncherBinding
+import com.ivancic.explorengv3.login.LoginActivity
 
 
 class LauncherActivity : AppCompatActivity() {

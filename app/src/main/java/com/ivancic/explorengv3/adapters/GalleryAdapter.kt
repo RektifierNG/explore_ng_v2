@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.adapters
+package com.ivancic.explorengv3.adapters
 
 import android.content.Context
 import android.content.res.Resources
@@ -8,10 +8,10 @@ import androidx.core.os.ConfigurationCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.ivancic.explorengv2.databinding.GalleryItemBinding
-import com.ivancic.explorengv2.models.GlideApp
-import com.ivancic.explorengv2.models.Marked
-import com.ivancic.explorengv2.models.User
+import com.ivancic.explorengv3.databinding.GalleryItemBinding
+import com.ivancic.explorengv3.models.GlideApp
+import com.ivancic.explorengv3.models.Marked
+import com.ivancic.explorengv3.models.User
 
 class GalleryAdapter (
     private val markerList: ArrayList<Marked>,

@@ -1,4 +1,4 @@
-package com.ivancic.explorengv2.login
+package com.ivancic.explorengv3.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,13 +8,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.ivancic.explorengv2.activities.Menu
-import com.ivancic.explorengv2.activities.Profil
-import com.ivancic.explorengv2.R
-import com.ivancic.explorengv2.databinding.ActivityLoginBinding
-import com.ivancic.explorengv2.models.GlideApp
-import com.ivancic.explorengv2.models.User
-import com.ivancic.explorengv2.models.User4Leaderboard
+import com.ivancic.explorengv3.activities.Menu
+import com.ivancic.explorengv3.activities.Profil
+import com.ivancic.explorengv3.R
+import com.ivancic.explorengv3.databinding.ActivityLoginBinding
+import com.ivancic.explorengv3.models.GlideApp
+import com.ivancic.explorengv3.models.User
+import com.ivancic.explorengv3.models.User4Leaderboard
 
 
 class LoginActivity : AppCompatActivity() {
