@@ -4,6 +4,7 @@ package com.ivancic.explorengv2.models
 import android.content.Context
 import android.content.res.Resources
 import android.os.Build
+import android.provider.Settings.Global.getString
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -117,7 +118,6 @@ class MarkerWindow( private val mV: MapView, private val contr: Context, private
 
         moveButton.setOnClickListener{
             if(dist<30){
-                var isIt=!Menu.currUser.collectedLocations.contains(b)
                 if(!Menu.currUser.collectedLocations.contains(b)) collect()
                 else Toast.makeText(contr,contr.getString(R.string.collected),Toast.LENGTH_SHORT).show()
             }else Toast.makeText(contr,contr.getString(R.string.closer),Toast.LENGTH_SHORT).show()
@@ -159,7 +159,7 @@ class MarkerWindow( private val mV: MapView, private val contr: Context, private
             append(": $title")
             append(contr.getString(R.string.colect)) })
 
-        alertDialogBuilder.setNegativeButton(android.R.string.no) { dialog, which ->
+        alertDialogBuilder.setNegativeButton(contr.getString(R.string.nou)) { _, _ ->
             Toast.makeText(contr,
                 contr.getString(R.string.no), Toast.LENGTH_SHORT).show()
         }

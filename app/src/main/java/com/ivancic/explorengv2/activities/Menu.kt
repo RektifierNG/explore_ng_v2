@@ -49,7 +49,7 @@ class Menu : AppCompatActivity() {
                     }catch (e : Exception){
                     }
 
-                    for ((i, v) in displayList.withIndex()) {
+                    for (v in displayList) {
                         if(v.uid==userId) currUser =v
                     }
                 }
