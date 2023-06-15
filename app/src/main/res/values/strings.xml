@@ -63,7 +63,7 @@
     <string name="closer"><![CDATA[Move a bit closer <30 m]]></string>
     <string name="back">Return to menu</string>
     <string name="leaderboard">Leaderboard</string>
-    <string name="mjesto">. place</string>
+    <string name="mjesto"> place</string>
     <string name="colect">" collected"</string>
     <string name="congrats">"Congratulations on successful acquisition of new marker.\n\nYou can check details about marker, that are not shown in short description, in gallery of collected markers.\n\n"</string>
     <string name="no">Close</string>

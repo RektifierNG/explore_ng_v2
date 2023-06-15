@@ -118,8 +118,8 @@ class MarkerWindow( private val mV: MapView, private val contr: Context, private
         moveButton.setOnClickListener{
             if(dist<30){
                 var isIt=!Menu.currUser.collectedLocations.contains(b)
-                    if(!Menu.currUser.collectedLocations.contains(b)) collect()
-                    else Toast.makeText(contr,contr.getString(R.string.collected),Toast.LENGTH_SHORT).show()
+                if(!Menu.currUser.collectedLocations.contains(b)) collect()
+                else Toast.makeText(contr,contr.getString(R.string.collected),Toast.LENGTH_SHORT).show()
             }else Toast.makeText(contr,contr.getString(R.string.closer),Toast.LENGTH_SHORT).show()
         }
 

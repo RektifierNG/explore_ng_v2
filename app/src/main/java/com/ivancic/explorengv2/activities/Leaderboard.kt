@@ -1,25 +1,29 @@
 package com.ivancic.explorengv2.activities
 
 import android.content.Intent
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.os.ConfigurationCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 import com.ivancic.explorengv2.adapters.CustomAdapter
 import com.ivancic.explorengv2.R
 import com.ivancic.explorengv2.databinding.ActivityLeaderboardBinding
 import com.ivancic.explorengv2.models.User4Leaderboard
+import java.util.Locale
 
 class Leaderboard : AppCompatActivity() {
     lateinit var binding:ActivityLeaderboardBinding
     private val database: DatabaseReference =
         FirebaseDatabase.getInstance("https://explore-ng-default-rtdb.europe-west1.firebasedatabase.app/").getReference("UsersLeaderboard")
-
+    private lateinit var locale: Locale
     var sortedList = ArrayList<User4Leaderboard>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityLeaderboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        locale = ConfigurationCompat.getLocales(Resources.getSystem().configuration).get(0)!!
         binding.returnToMenu.setOnClickListener {
             val intent= Intent(this, Menu::class.java)
             startActivity(intent) }
@@ -42,17 +46,34 @@ class Leaderboard : AppCompatActivity() {
                         if (v.totalPoints>=max) {index=i
                         max=v.totalPoints}
                     }
-                    sortedList.add(displayList[index])
+                    if(!sortedList.contains(displayList[index]))
+                        sortedList.add(displayList[index])
                     displayList.removeAt(index)
 
                 }
 
                 for ((i, v) in sortedList.withIndex()) {
-                    if (v.uid==Menu.currUser.uid) binding.myPosition.text= buildString {
-        append(i+1)
-        append(getString(R.string.mjesto))
+                    if (v.uid==Menu.currUser.uid)
+                    {
+                        if(locale.language=="hr"){
+                        binding.myPosition.text= buildString {
+                        append(i + 1)
+                        append(getString(R.string.mjesto))}}
+                            else binding.myPosition.text = buildString {
+                                    append(i + 1)
+                                    append(
+                                        when ((i + 1) % 10) {
+                                            1 -> "st"
+                                            2 -> "nd"
+                                            3 -> "rd"
+                                            else -> "th"
+                                        }
+                                    )
+                                    append(getString(R.string.mjesto))
+                                }
+                            }
     }
-                }
+
 
                 binding.recyclerView.apply {
                     layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
