@@ -6,13 +6,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.ivancic.explorengv3.activities.Menu
 import com.ivancic.explorengv3.activities.Profil
 import com.ivancic.explorengv3.R
 import com.ivancic.explorengv3.databinding.ActivityLoginBinding
-import com.ivancic.explorengv3.models.GlideApp
+import com.ivancic.explorengv3.databinding.ActivityLoginNewUiBinding
 import com.ivancic.explorengv3.models.User
 import com.ivancic.explorengv3.models.User4Leaderboard
 
@@ -20,7 +18,7 @@ import com.ivancic.explorengv3.models.User4Leaderboard
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityLoginNewUiBinding
     private val database: DatabaseReference =
         FirebaseDatabase.getInstance("https://explore-ng-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users")
     private val database2: DatabaseReference =
@@ -30,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
     private var userId:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityLoginBinding.inflate(layoutInflater)
+        binding=ActivityLoginNewUiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
@@ -44,9 +42,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val sRef: StorageReference =
-            FirebaseStorage.getInstance().reference.child("etes-logo-manji.jpg")
-        GlideApp.with(this@LoginActivity).load(sRef).into(binding.userProfilePhoto)
 
 
         binding.btnLogin.setOnClickListener {
@@ -91,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
 
                             displayList.addAll(a)
 
-                        }catch (e : Exception){
+                        }catch (_: Exception){
                         }}
 
                         override fun onCancelled(error: DatabaseError) {

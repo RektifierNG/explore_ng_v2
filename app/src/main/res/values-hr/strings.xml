@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">explore_ng</string>
     <string name="login">LOGIN</string>
-    <string name="register">REGISTER</string>
+    <string name="register">REGISTRACIJA</string>
     <string name="hint_email">Korisnik</string>
     <string name="hint_password">Lozinka</string>
     <string name="action_sign_in_short">Lozinka</string>
