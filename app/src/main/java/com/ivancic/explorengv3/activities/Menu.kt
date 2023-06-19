@@ -17,6 +17,7 @@ import com.google.firebase.storage.StorageReference
 import com.ivancic.explorengv3.R
 import com.ivancic.explorengv3.adapters.MenuAdapter
 import com.ivancic.explorengv3.databinding.ActivityMenuNewUiBinding
+import com.ivancic.explorengv3.models.GlideApp
 import com.ivancic.explorengv3.models.User
 
 
@@ -122,15 +123,42 @@ class Menu : AppCompatActivity() {
                 if(position==14) binding.rV.scrollToPosition(4)
                 if(position==3) binding.rV.scrollToPosition(11)
 
-                if(offset in 2570..2950) position=0
-                if(offset in 2960..3390) position=1
-                if(offset in 3400..3770) position=2
-                if(offset in 3780..4190) position=3
-                if(offset in 4200..4600 ||offset in 1320..1730) position=4
-                if(offset in 1740..2100) position=5
-                if(offset in 2110..2560) position=6
-
-                binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                if(offset in 2650..2900) {
+                    position=0
+                    GlideApp.with(this@Menu).load(R.drawable.quiz).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                }
+                else if(offset in 3100..3300) {
+                    position=1
+                    GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                }
+                else if(offset in 3500..3700) {
+                    position=2
+                    GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                }
+                else if(offset in 3900..4100) {
+                    position=3
+                    GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                }
+                else if(offset in 4300..4500 ||offset in 1400..1650) {
+                    position=4
+                    GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                }
+                else if(offset in 1850..2000) {
+                    position=5
+                    GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                }
+                else if(offset in 2200..2450) {
+                    position=6
+                    GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                }
+                else binding.frame.animate().scaleX(0f).scaleY(0f).setDuration(1000)
 
             }
         })
