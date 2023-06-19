@@ -12,6 +12,8 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.ivancic.explorengv3.R;
+
 /**
  * Developer: Abed Almoradi
  * Email: Abd.Almoradi@gmail.com

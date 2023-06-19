@@ -65,6 +65,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:5.0.1'
     implementation 'org.greenrobot:eventbus:3.3.1'
+    implementation project(':libraries:circlelayout')
 
 
 

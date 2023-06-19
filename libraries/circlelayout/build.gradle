@@ -1,12 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 33
     buildToolsVersion "21"
+
+    namespace 'com.ivancic.explorengv3'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 21
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
     }
@@ -19,5 +21,5 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

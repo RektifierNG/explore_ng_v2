@@ -28,6 +28,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 
+import com.ivancic.explorengv3.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
