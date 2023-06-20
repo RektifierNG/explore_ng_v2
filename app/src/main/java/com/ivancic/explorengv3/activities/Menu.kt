@@ -1,6 +1,8 @@
 package com.ivancic.explorengv3.activities
 
 import android.os.Bundle
+import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -93,6 +95,9 @@ class Menu : AppCompatActivity() {
         imageList.add(R.drawable.about_project)
 
 
+        var rotation = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        rotation.fillAfter = true;
+        binding.pos.startAnimation(rotation);
 
 
         binding.rV.apply {
@@ -118,42 +123,43 @@ class Menu : AppCompatActivity() {
 
                 * */
 
+                binding.offset.visibility= View.GONE
 
                 var position: Int = offset / (binding.rV.height-20)
-                if(position==14) binding.rV.scrollToPosition(4)
+                if(position==14) binding.rV.scrollToPosition(3)
                 if(position==3) binding.rV.scrollToPosition(11)
 
-                if(offset in 2650..2900) {
+                if(offset in 1950..2100) {
                     position=0
                     GlideApp.with(this@Menu).load(R.drawable.quiz).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
                 }
-                else if(offset in 3100..3300) {
+                else if(offset in 2250..2400) {
                     position=1
                     GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
                 }
-                else if(offset in 3500..3700) {
+                else if(offset in 2550..2700) {
                     position=2
                     GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
                 }
-                else if(offset in 3900..4100) {
+                else if(offset in 2850..3000) {
                     position=3
                     GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
                 }
-                else if(offset in 4300..4500 ||offset in 1400..1650) {
+                else if(offset in 1000..1150) {
                     position=4
                     GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
                 }
-                else if(offset in 1850..2000) {
+                else if(offset in 1300..1450) {
                     position=5
                     GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
                 }
-                else if(offset in 2200..2450) {
+                else if(offset in 1600..1750) {
                     position=6
                     GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)

@@ -11,7 +11,7 @@
         android:scaleY="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/rV"
+        app:layout_constraintBottom_toTopOf="@+id/frame2"
         app:layout_constraintTop_toTopOf="parent">
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
@@ -42,6 +42,27 @@
         </androidx.cardview.widget.CardView>
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/offset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"/>
+
+    <FrameLayout
+        android:id="@+id/frame2"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="25dp"
+            android:layout_gravity="center">
+
+        </androidx.cardview.widget.CardView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rV"
         android:layout_margin="10dp"
@@ -52,4 +73,5 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
