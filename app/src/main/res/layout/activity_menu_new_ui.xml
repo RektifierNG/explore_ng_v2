@@ -11,7 +11,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:textSize="25sp"
-
+android:visibility="gone"
         android:text="000"
         app:layout_constraintTop_toTopOf="parent"
         />
@@ -67,11 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.75"
-            android:background="@color/lightish"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rV"
         android:layout_marginBottom="10dp"
@@ -81,11 +77,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
         <androidx.cardview.widget.CardView
             android:layout_width="140dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="25dp"
-            android:layout_marginBottom="20dp"
+            android:layout_height="110dp"
+            app:cardCornerRadius="20dp"
+            android:layout_marginBottom="10dp"
             android:alpha="0.6"
             android:layout_gravity="center">
 

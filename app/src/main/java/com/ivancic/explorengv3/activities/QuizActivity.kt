@@ -64,6 +64,12 @@ class QuizActivity : AppCompatActivity() {
 
         val question =(0 until displayList.size).random()
         var isItTrue=false
+        binding.question.animate().translationYBy(-250f).setDuration(400).withEndAction { binding.question.animate().translationYBy(250f).setDuration(400) }
+        binding.btnOptionA.animate().translationXBy(-250f).setDuration(600).withEndAction {binding.btnOptionA.animate().translationXBy(250f).setDuration(600)}
+        binding.btnOptionB.animate().translationXBy(250f).setDuration(600).withEndAction {binding.btnOptionB.animate().translationXBy(-250f).setDuration(600)}
+        binding.btnOptionC.animate().translationXBy(-350f).setDuration(400).withEndAction {binding.btnOptionC.animate().translationXBy(350f).setDuration(400)}
+        binding.btnOptionD.animate().translationXBy(350f).setDuration(400).withEndAction {binding.btnOptionD.animate().translationXBy(-350f).setDuration(400)}
+
         binding.textquestion.text=displayList[question].question
         binding.btnOptionA.text=displayList[question].optionA
         binding.btnOptionB.text=displayList[question].optionB

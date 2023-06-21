@@ -1,8 +1,12 @@
 package com.ivancic.explorengv3.activities
 
+import android.animation.Animator
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.animation.LinearInterpolator
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -75,7 +79,7 @@ class Menu : AppCompatActivity() {
         }
 
         lateinit var currUser: User
-
+        var position: Int= 0
 
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,7 +98,7 @@ class Menu : AppCompatActivity() {
         imageList.add(R.drawable.about_app)
         imageList.add(R.drawable.about_project)
 
-
+        binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
         var rotation = AnimationUtils.loadAnimation(this, R.anim.rotate);
         rotation.fillAfter = true;
         binding.pos.startAnimation(rotation);
@@ -113,109 +117,79 @@ class Menu : AppCompatActivity() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val offset: Int = binding.rV.computeHorizontalScrollOffset()
-                /* 0- <2570, 2950>
-                *  1    <2960,3390>
-                   2     <3400, 3770>
-                    3    * 3780, 4190
-                    4    * 4200, 4600   || 1320, 1730
-                    5    * 2100, 1740
-                    *6       2110, 2560
 
-                * */
 
                 binding.offset.visibility= View.GONE
 
-                var position: Int = offset / (binding.rV.height-20)
-                if(position==14) binding.rV.scrollToPosition(3)
-                if(position==3) binding.rV.scrollToPosition(11)
+                //var position: Int = offset / (binding.rV.height-20)
+
 
                 if(offset in 1950..2100) {
                     position=0
                     GlideApp.with(this@Menu).load(R.drawable.quiz).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 2250..2400) {
                     position=1
                     GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 2550..2700) {
                     position=2
                     GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 2850..3000) {
                     position=3
                     GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1000..1150) {
                     position=4
                     GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1300..1450) {
                     position=5
                     GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1600..1750) {
                     position=6
                     GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).setDuration(1000)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else binding.frame.animate().scaleX(0f).scaleY(0f).setDuration(1000)
+                else binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
+
+               if (offset>=3150) binding.rV.scrollToPosition(3)
+                if (offset<=880) binding.rV.scrollToPosition(11)
 
             }
         })
         binding.rV.scrollToPosition(7)
 
-       /* ad.add(R.drawable.quiz)
-        ad.add(R.drawable.edit_profile)
-        ad.add(R.drawable.gallery)
-        ad.add(R.drawable.leaderboard)
-        ad.add(R.drawable.reward)
-        circularLayout.setAdapter(ad)
-        circularLayout.setChildrenCount(4)
-        circularLayout.setRadius(120)
-        circularLayout.setChildrenPinned(true)*/
+        binding.image.setOnClickListener {
+            val lI=LinearInterpolator()
+            when(position){
+                0->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, QuizActivity::class.java)) }}
+                1->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Profil::class.java)) }}
+                2->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Leaderboard::class.java)) }}
+                3->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Gallery::class.java)) }}
+                4->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Reward::class.java)) }}
+                5->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, About::class.java).apply {
+                    putExtra("which", 0) }) }}
+                6->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, About::class.java).apply {
+                    putExtra("which", 1) }) }}
+
+            }
+        }
+
         val currentUser = auth.currentUser
 
         if(currentUser != null) {
             userId = currentUser.uid
         }
 
-      /*  binding.btnPoredak.setOnClickListener {
-            val intent=Intent(this, Leaderboard::class.java)
-            startActivity(intent)
-        }
-
-
-        binding.btnCollect.setOnClickListener {
-            val intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                Intent(this, MainActivity::class.java)
-            } else {
-                TODO("VERSION.SDK_INT < S")
-            }
-            intent.putExtra("uid", currUser.uid)
-            startActivity(intent)
-        }
-        binding.btnProfil.setOnClickListener {
-            val intent = Intent(this, Profil::class.java)
-            startActivity(intent)
-        }
-        binding.btnKviz.setOnClickListener {
-            val intent = Intent(this, QuizActivity::class.java)
-            intent.putExtra("noQuizzes", currUser.numberOfQuizzes)
-            intent.putExtra("quizPoints", currUser.totalQuizPoint)
-            intent.putExtra("totalPoints", currUser.totalPoints)
-            startActivity(intent)
-        }
-        binding.btnGalerija.setOnClickListener {
-            val intent = Intent(this, Gallery::class.java)
-            startActivity(intent)
-        }
-*/
         database.child(userId).addValueEventListener(object : ValueEventListener {
             var displayList = ArrayList<User>()
             override fun onDataChange(snapshot: DataSnapshot) {

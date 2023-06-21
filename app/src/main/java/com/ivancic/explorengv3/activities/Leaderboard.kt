@@ -63,10 +63,10 @@ class Leaderboard : AppCompatActivity() {
                                     append(i + 1)
                                     append(
                                         when ((i + 1) % 10) {
-                                            1 -> "st"
-                                            2 -> "nd"
-                                            3 -> "rd"
-                                            else -> "th"
+                                            1 -> "st "
+                                            2 -> "nd "
+                                            3 -> "rd "
+                                            else -> "th "
                                         }
                                     )
                                     append(getString(R.string.mjesto))
