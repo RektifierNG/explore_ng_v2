@@ -28,7 +28,7 @@ class MenuAdapter (
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var pos =position % 7
+        var pos =position % 8
         holder.bindItem(imageList[pos],th)
         holder.itemView.setOnClickListener { listener(pos) }
     }

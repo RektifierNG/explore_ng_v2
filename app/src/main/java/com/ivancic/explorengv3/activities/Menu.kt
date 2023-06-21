@@ -91,6 +91,7 @@ class Menu : AppCompatActivity() {
         //currUser=LoginActivity.getUser()
         var imageList= ArrayList <Int>()
         imageList.add(R.drawable.quiz)
+        imageList.add(R.drawable.explore)
         imageList.add(R.drawable.edit_profile)
         imageList.add(R.drawable.leaderboard)
         imageList.add(R.drawable.gallery)
@@ -119,50 +120,56 @@ class Menu : AppCompatActivity() {
                 val offset: Int = binding.rV.computeHorizontalScrollOffset()
 
 
-                binding.offset.visibility= View.GONE
+                binding.offset.text=offset.toString()
+                //binding.offset.visibility= View.GONE
 
                 //var position: Int = offset / (binding.rV.height-20)
 
 
                 if(offset in 1950..2100) {
+                    position=7
+                    GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
+                }
+                else if(offset in 2250..2400) {
                     position=0
                     GlideApp.with(this@Menu).load(R.drawable.quiz).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 2250..2400) {
-                    position=1
-                    GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
-                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
-                }
                 else if(offset in 2550..2700) {
-                    position=2
-                    GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
+                    position=1
+                    GlideApp.with(this@Menu).load(R.drawable.explore).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 2850..3000) {
+                    position=2
+                    GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
+                    binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
+                }
+                else if(offset in 3150..3300) {
                     position=3
-                    GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
+                    GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1000..1150) {
                     position=4
-                    GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
+                    GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1300..1450) {
                     position=5
-                    GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
+                    GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1600..1750) {
                     position=6
-                    GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
+                    GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
 
-               if (offset>=3150) binding.rV.scrollToPosition(3)
-                if (offset<=880) binding.rV.scrollToPosition(11)
+               if (offset>=3450) binding.rV.scrollToPosition(3)
+                if (offset<=880) binding.rV.scrollToPosition(12)
 
             }
         })
@@ -172,13 +179,14 @@ class Menu : AppCompatActivity() {
             val lI=LinearInterpolator()
             when(position){
                 0->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, QuizActivity::class.java)) }}
-                1->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Profil::class.java)) }}
-                2->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Leaderboard::class.java)) }}
-                3->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Gallery::class.java)) }}
-                4->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Reward::class.java)) }}
-                5->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, About::class.java).apply {
-                    putExtra("which", 0) }) }}
+                1->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, MainActivity::class.java)) }}
+                2->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Profil::class.java)) }}
+                3->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Leaderboard::class.java)) }}
+                4->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Gallery::class.java)) }}
+                5->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, Reward::class.java)) }}
                 6->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, About::class.java).apply {
+                    putExtra("which", 0) }) }}
+                7->{binding.frame.animate().scaleX(5f).scaleY(5f).setInterpolator(lI).setDuration(150).withEndAction { startActivity(Intent(this@Menu, About::class.java).apply {
                     putExtra("which", 1) }) }}
 
             }
@@ -225,4 +233,13 @@ class Menu : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
+    }
 }

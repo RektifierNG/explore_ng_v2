@@ -70,12 +70,10 @@ class MainActivity : AppCompatActivity()  {
 
     init {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            locationRequest = LocationRequest.Builder(1000)
-                .setMinUpdateIntervalMillis(500)
-                .setMaxUpdateDelayMillis(1000)
-                .build()
-        }
+        locationRequest = LocationRequest.Builder(1000)
+            .setMinUpdateIntervalMillis(500)
+            .setMaxUpdateDelayMillis(1000)
+            .build()
 
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {

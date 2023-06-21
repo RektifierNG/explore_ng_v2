@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/lightish"
+    android:alpha="0.75"
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -29,6 +31,9 @@ Svojim pisanim porukama poručili su da je neprihvatljiv  bilo koji oblik nasilj
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+
+
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
@@ -39,6 +44,36 @@ Svojim pisanim porukama poručili su da je neprihvatljiv  bilo koji oblik nasilj
 Svojim pisanim porukama poručili su da je neprihvatljiv  bilo koji oblik nasilja (fizičko, verbalno, psihološko) i da moramo biti pažljivi u online okruženju jednako kao i u stvarnom životu. Projekt je financiran od strane Središnjeg državnog ureda za demografiju i mlade Republike Hrvatske."
 
                 android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/move_button"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@android:color/darker_gray"
+                    android:text="@string/skupi"
+                    android:textColor="@color/black" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/delete_button"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="130dp"
+                    android:background="@android:color/darker_gray"
+                    android:text="@string/zatvori"
+                    android:textColor="@color/black" />
+
+
+
+            </LinearLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -72,34 +107,5 @@ Svojim pisanim porukama poručili su da je neprihvatljiv  bilo koji oblik nasilj
     </ScrollView>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/move_button"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp"
-            android:background="@android:color/darker_gray"
-            android:text="@string/skupi"
-            android:textColor="@color/black" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/delete_button"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@android:color/darker_gray"
-            android:text="@string/zatvori"
-            android:textColor="@color/black" />
-
-
-
-    </LinearLayout>
 
 </LinearLayout>
