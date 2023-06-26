@@ -70,4 +70,6 @@
     <string name="gallery">Gallery</string>
     <string name="Detalji">Details about marker</string>
     <string name="nou">Exit</string>
+    <string name="o_projektu">About Project</string>
+    <string name="nagrade">Rewards</string>
 </resources>

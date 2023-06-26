@@ -129,44 +129,55 @@ class Menu : AppCompatActivity() {
                 if(offset in 1950..2100) {
                     position=7
                     GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
+                    binding.title.text=getString(R.string.o_projektu)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 2250..2400) {
                     position=0
                     GlideApp.with(this@Menu).load(R.drawable.quiz).into(binding.image)
+                    binding.title.text=getString(R.string.kviz)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 2550..2700) {
                     position=1
                     GlideApp.with(this@Menu).load(R.drawable.explore).into(binding.image)
+                    binding.title.text=getString(R.string.skupljanje)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 2850..3000) {
                     position=2
                     GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
+                    binding.title.text=getString(R.string.profil)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 3150..3300) {
                     position=3
                     GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
+                    binding.title.text=getString(R.string.poredak)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1000..1150) {
                     position=4
                     GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
+                    binding.title.text=getString(R.string.galerija)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1300..1450) {
                     position=5
                     GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
+                    binding.title.text=getString(R.string.nagrade)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else if(offset in 1600..1750) {
                     position=6
                     GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
+                    binding.title.text=getString(R.string.about)
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
+                else{
+                    binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
+                    binding.title.text=""
+                }
 
                if (offset>=3450) binding.rV.scrollToPosition(3)
                 if (offset<=880) binding.rV.scrollToPosition(12)
