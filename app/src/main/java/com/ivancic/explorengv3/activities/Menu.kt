@@ -117,70 +117,114 @@ class Menu : AppCompatActivity() {
         binding.rV.addOnScrollListener(object: RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                val offset: Int = binding.rV.computeHorizontalScrollOffset()
+                var offset: Int = binding.rV.computeHorizontalScrollOffset()
 
 
-                binding.offset.text=offset.toString()
-                //binding.offset.visibility= View.GONE
 
+                offset=(offset*10)/(binding.rV.height-20)
                 //var position: Int = offset / (binding.rV.height-20)
+                binding.offset.text=offset.toString()
+              //  binding.offset.visibility= View.GONE
 
-
-                if(offset in 1950..2100) {
+                if(offset in 130..140) {//provjereno ovo se prvo pokreće
                     position=7
                     GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
-                    binding.title.text=getString(R.string.o_projektu)
+                    binding.title.text=getString(R.string.o_projektu_left)
+                    binding.title1.text=getString(R.string.o_projektu_right)
+                    binding.title2.text=getString(R.string.o_projektu)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 2250..2400) {
+                else if(offset in 150..160) { //position 8
                     position=0
                     GlideApp.with(this@Menu).load(R.drawable.quiz).into(binding.image)
-                    binding.title.text=getString(R.string.kviz)
+                    binding.title.text=getString(R.string.kviz_left)
+                    binding.title1.text=getString(R.string.kviz_right)
+                    binding.title2.text=getString(R.string.kviz)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 2550..2700) {
+                else if(offset in 170..180) {//position 9
                     position=1
                     GlideApp.with(this@Menu).load(R.drawable.explore).into(binding.image)
-                    binding.title.text=getString(R.string.skupljanje)
+                    binding.title.text=getString(R.string.skupljanje_left)
+                    binding.title1.text=getString(R.string.skupljanje_right)
+                    binding.title2.text=getString(R.string.skupljanje)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 2850..3000) {
+                else if(offset in 190..200) {//position 10
                     position=2
                     GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
-                    binding.title.text=getString(R.string.profil)
+                    binding.title.text=getString(R.string.profil_left)
+                    binding.title1.text=getString(R.string.profil_right)
+                    binding.title2.text=getString(R.string.profil)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 3150..3300) {
+                else if(offset in 210..220) {//position 11
                     position=3
                     GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
-                    binding.title.text=getString(R.string.poredak)
+                    binding.title.text=getString(R.string.poredak_left)
+                    binding.title1.text=getString(R.string.poredak_right)
+                    binding.title2.text=getString(R.string.poredak)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 1000..1150) {
+                else if(offset in 70..80) { //position 4
                     position=4
                     GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
-                    binding.title.text=getString(R.string.galerija)
+                    binding.title.text=getString(R.string.galerija_left)
+                    binding.title1.text=getString(R.string.galerija_right)
+                    binding.title2.text=getString(R.string.galerija)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 1300..1450) {
+                else if(offset in 90..100) { // position 5
                     position=5
                     GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
-                    binding.title.text=getString(R.string.nagrade)
+                    binding.title.text=getString(R.string.nagrade_left)
+                    binding.title1.text=getString(R.string.nagrade_right)
+                    binding.title2.text=getString(R.string.nagrade)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
-                else if(offset in 1600..1750) {
+                else if(offset in 110..120) {
                     position=6
                     GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
-                    binding.title.text=getString(R.string.about)
+                    binding.title.text=getString(R.string.about_left)
+                    binding.title1.text=getString(R.string.about_right)
+                    binding.title2.text=getString(R.string.about)
+                    binding.title.animate().translationX(0f).duration = 1000
+                    binding.title1.animate().translationX(0f).duration = 1000
+                    binding.title2.animate().translationX(0f).duration = 1000
                     binding.frame.animate().scaleX(1f).scaleY(1f).duration = 1000
                 }
                 else{
                     binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
-                    binding.title.text=""
+                    binding.title.animate().translationXBy(-450F).setDuration(1000).withEndAction { binding.title.text=""
+                        binding.title1.text="" }
+                    binding.title1.animate().translationXBy(450F).duration = 1000
+                    binding.title2.animate().translationXBy(450f).duration = 1000
+
                 }
 
-               if (offset>=3450) binding.rV.scrollToPosition(3)
-                if (offset<=880) binding.rV.scrollToPosition(12)
+               if (offset>=240) binding.rV.scrollToPosition(4)
+            if (offset<=55) binding.rV.scrollToPosition(11)
 
             }
         })

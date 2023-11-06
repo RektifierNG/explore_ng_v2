@@ -73,4 +73,20 @@
     <string name="nou">Izlaz</string>
     <string name="o_projektu">O Projektu</string>
     <string name="nagrade">Nagrade</string>
+    <string name="o_projektu_left">"O Pro"</string>
+    <string name="o_projektu_right">jektu</string>
+    <string name="nagrade_left">Nag</string>
+    <string name="nagrade_right">rade</string>
+    <string name="kviz_left">qu</string>
+    <string name="kviz_right">iz</string>
+    <string name="skupljanje_left">Skupljanje </string>
+    <string name="skupljanje_right">Lokacija</string>
+    <string name="profil_left">pro</string>
+    <string name="profil_right">fil</string>
+    <string name="poredak_left">Pore</string>
+    <string name="poredak_right">dak</string>
+    <string name="galerija_left">Galerija </string>
+    <string name="galerija_right">lokacija</string>
+    <string name="about_left">o apl</string>
+    <string name="about_right">ikaciji</string>
 </resources>

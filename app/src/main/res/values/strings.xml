@@ -72,4 +72,20 @@
     <string name="nou">Exit</string>
     <string name="o_projektu">About Project</string>
     <string name="nagrade">Rewards</string>
+    <string name="o_projektu_left">"About "</string>
+    <string name="o_projektu_right">Project</string>
+    <string name="nagrade_left">Rew</string>
+    <string name="nagrade_right">ards</string>
+    <string name="kviz_left">qu</string>
+    <string name="kviz_right">iz</string>
+    <string name="skupljanje_left">Collect </string>
+    <string name="skupljanje_right"> locations</string>
+    <string name="profil_left">prof</string>
+    <string name="profil_right">ile</string>
+    <string name="poredak_left">Leader</string>
+    <string name="poredak_right">board</string>
+    <string name="galerija_left">Gallery o</string>
+    <string name="galerija_right">f locations</string>
+    <string name="about_left">about ap</string>
+    <string name="about_right">plication</string>
 </resources>
