@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailsActivity">
+
+    <ImageView
+        android:id="@+id/back"
+        app:layout_constraintTop_toBottomOf="@id/large"
+        app:layout_constraintLeft_toLeftOf="@id/large"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleY="0.5"
+        />
+    <ImageView
+        android:id="@+id/forward"
+        app:layout_constraintTop_toBottomOf="@id/large"
+        app:layout_constraintEnd_toEndOf="@id/large"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleY="0.5"
+        android:scaleType="centerCrop"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/returnToMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/ripple"
+        android:elevation="10dp"
+        android:text="@string/back"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+
+        app:layout_constraintEnd_toStartOf="@+id/forward"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toBottomOf="@+id/large" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:cardCornerRadius="30dp"
+        android:layout_margin="20dp"
+        android:elevation="10dp"
+        android:id="@+id/large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.ivancic.explorengv3.models.ZoomClass
+            android:id="@+id/photos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey3"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_gravity="center"
+            android:elevation="15dp"
+            android:scaleType="centerCrop"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/returnToMenu">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Elektrotehnička i ekonomska škola Nova Gradiška i  Informativno pravni centar – IPC iz Slavonskog Broda,  projektni partneri, održali su 27.10.2022. javnu akciju u okviru projekta „Stop vršnjačkom nasilju“ na Trgu kralja Tomislava u Novoj Gradiški. Šireći ideju borbe protiv vršnjačkog Internet (cyber) nasilja, vrijedni učenici-volonteri dijelili su građanima i prolaznicima promotivne materijale, podižući pri tome svijest građana o ovom raširenom problemu među mladima.
+Svojim pisanim porukama poručili su da je neprihvatljiv  bilo koji oblik nasilja (fizičko, verbalno, psihološko) i da moramo biti pažljivi u online okruženju jednako kao i u stvarnom životu. Projekt je financiran od strane Središnjeg državnog ureda za demografiju i mlade Republike Hrvatske."
+                android:textColor="@color/black"
+
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
