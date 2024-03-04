@@ -78,8 +78,8 @@
     <string name="nagrade_right">ards</string>
     <string name="kviz_left">qu</string>
     <string name="kviz_right">iz</string>
-    <string name="skupljanje_left">Collect </string>
-    <string name="skupljanje_right"> locations</string>
+    <string name="skupljanje_left">Collect\n</string>
+    <string name="skupljanje_right">locations</string>
     <string name="profil_left">prof</string>
     <string name="profil_right">ile</string>
     <string name="poredak_left">Leader</string>

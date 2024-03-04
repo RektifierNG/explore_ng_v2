@@ -8,8 +8,12 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatImageView
+import com.google.firebase.storage.FirebaseStorage
+import com.ivancic.explorengv3.activities.DetailsActivity
+import com.ivancic.explorengv3.activities.DetailsActivity.Companion.currentMarker
 
 class ZoomClass : AppCompatImageView, View.OnTouchListener,
     GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
@@ -179,6 +183,10 @@ class ZoomClass : AppCompatImageView, View.OnTouchListener,
                 mLast[currentPoint.x] = currentPoint.y
             }
             MotionEvent.ACTION_POINTER_UP -> mode = NONE
+
+            MotionEvent.ACTION_UP ->{
+
+            }
         }
         imageMatrix = mMatrix
         return false
@@ -196,14 +204,42 @@ class ZoomClass : AppCompatImageView, View.OnTouchListener,
         return false
     }
 
-    override fun onScroll(motionEvent: MotionEvent, motionEvent1: MotionEvent, v: Float, v1: Float): Boolean {
+    override fun onScroll(
+        e1: MotionEvent?,
+        e2: MotionEvent,
+        distanceX: Float,
+        distanceY: Float
+    ): Boolean {
         return false
     }
 
+
     override fun onLongPress(motionEvent: MotionEvent) {}
-    override fun onFling(motionEvent: MotionEvent, motionEvent1: MotionEvent, v: Float, v1: Float): Boolean {
+    override fun onFling(
+        e1: MotionEvent?,
+        e2: MotionEvent,
+        velocityX: Float,
+        velocityY: Float
+    ): Boolean {
+
+        if(velocityY>1200) DetailsActivity.binding.photos2.visibility=View.GONE
+        else if(velocityX<-1200) {
+            if(DetailsActivity.i!= currentMarker.noImages!!.toInt()) DetailsActivity.i++
+            var gsReference2 = FirebaseStorage.getInstance()
+                .getReferenceFromUrl("gs://explore-ng.appspot.com/Markeri/${currentMarker.upimage}/${currentMarker.image}${DetailsActivity.i}.jpg")
+            GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos)
+            GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos2)
+        }
+        else if (velocityX>1200){
+            if(DetailsActivity.i>1) DetailsActivity.i--
+            var gsReference2 = FirebaseStorage.getInstance()
+                .getReferenceFromUrl("gs://explore-ng.appspot.com/Markeri/${currentMarker.upimage}/${currentMarker.image}${DetailsActivity.i}.jpg")
+            GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos)
+            GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos2)
+        }
         return false
     }
+
 
     /*
         onDoubleTap

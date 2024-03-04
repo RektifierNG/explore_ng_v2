@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     tools:context=".activities.DetailsActivity">
 
     <ImageView
@@ -11,18 +12,18 @@
         app:layout_constraintTop_toBottomOf="@id/large"
         app:layout_constraintLeft_toLeftOf="@id/large"
         android:src="@drawable/ic_baseline_arrow_back_24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleY="0.5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
         />
     <ImageView
         android:id="@+id/forward"
         app:layout_constraintTop_toBottomOf="@id/large"
         app:layout_constraintEnd_toEndOf="@id/large"
         android:src="@drawable/ic_baseline_arrow_forward_24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleY="0.5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+
         android:scaleType="centerCrop"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -64,6 +65,22 @@
             />
     </androidx.cardview.widget.CardView>
 
+    <com.ivancic.explorengv3.models.ZoomClass
+        android:id="@+id/photos2"
+        android:rotation="90"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:alpha="0"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey3"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_gravity="center"
+        android:elevation="15dp"
+        android:scaleType="centerCrop"
+        />
+
     <ScrollView
         android:layout_margin="20dp"
         android:layout_width="match_parent"
@@ -74,7 +91,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/lightish">
 
             <ImageView
                 android:id="@+id/image"

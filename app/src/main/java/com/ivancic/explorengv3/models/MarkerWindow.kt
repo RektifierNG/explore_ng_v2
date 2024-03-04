@@ -63,13 +63,11 @@ class MarkerWindow( private val mV: MapView, private val contr: Context, private
         var b=marked.id
         var a=contr.getString(R.string.Distance)
 
-         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val latdist = sqrt((marked.lat!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lon)*(marked.lat!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lon))*111139
-            val londist = sqrt((marked.lon!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lat)*(marked.lon!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lat))*111139
-            dist=latdist+londist
-            dist=(dist * 100.0).roundToInt() / 100.0
-            a+="$dist m"
-        }
+        val latdist = sqrt((marked.lat!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lon)*(marked.lat!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lon))*111139
+        val londist = sqrt((marked.lon!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lat)*(marked.lon!!.toDouble()- com.ivancic.explorengv3.activities.MainActivity.lat))*111139
+        dist=latdist+londist
+        dist=(dist * 100.0).roundToInt() / 100.0
+        a+="$dist m"
 
 
         a += if(locale.language=="hr") "\n\n ${marked.desc}"

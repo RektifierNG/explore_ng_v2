@@ -79,7 +79,7 @@
     <string name="nagrade_right">rade</string>
     <string name="kviz_left">qu</string>
     <string name="kviz_right">iz</string>
-    <string name="skupljanje_left">Skupljanje </string>
+    <string name="skupljanje_left">Skupljanje\n</string>
     <string name="skupljanje_right">Lokacija</string>
     <string name="profil_left">pro</string>
     <string name="profil_right">fil</string>

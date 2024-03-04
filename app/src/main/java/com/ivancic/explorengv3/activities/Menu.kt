@@ -90,6 +90,7 @@ class Menu : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         //currUser=LoginActivity.getUser()
         var imageList= ArrayList <Int>()
+        imageList.clear()
         imageList.add(R.drawable.quiz)
         imageList.add(R.drawable.explore)
         imageList.add(R.drawable.edit_profile)
@@ -123,12 +124,13 @@ class Menu : AppCompatActivity() {
 
                 offset=(offset*10)/(binding.rV.height-20)
                 //var position: Int = offset / (binding.rV.height-20)
-                binding.offset.text=offset.toString()
+                //binding.offset.text=offset.toString()
               //  binding.offset.visibility= View.GONE
 
                 if(offset in 130..140) {//provjereno ovo se prvo pokreće
                     position=7
-                    GlideApp.with(this@Menu).load(R.drawable.about_project).into(binding.image)
+                    binding.offset.text="about_project"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.o_projektu_left)
                     binding.title1.text=getString(R.string.o_projektu_right)
                     binding.title2.text=getString(R.string.o_projektu)
@@ -139,7 +141,8 @@ class Menu : AppCompatActivity() {
                 }
                 else if(offset in 150..160) { //position 8
                     position=0
-                    GlideApp.with(this@Menu).load(R.drawable.quiz).into(binding.image)
+                    binding.offset.text="quiz"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.kviz_left)
                     binding.title1.text=getString(R.string.kviz_right)
                     binding.title2.text=getString(R.string.kviz)
@@ -150,7 +153,8 @@ class Menu : AppCompatActivity() {
                 }
                 else if(offset in 170..180) {//position 9
                     position=1
-                    GlideApp.with(this@Menu).load(R.drawable.explore).into(binding.image)
+                    binding.offset.text="explore"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.skupljanje_left)
                     binding.title1.text=getString(R.string.skupljanje_right)
                     binding.title2.text=getString(R.string.skupljanje)
@@ -161,7 +165,8 @@ class Menu : AppCompatActivity() {
                 }
                 else if(offset in 190..200) {//position 10
                     position=2
-                    GlideApp.with(this@Menu).load(R.drawable.edit_profile).into(binding.image)
+                    binding.offset.text="edit_profile"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.profil_left)
                     binding.title1.text=getString(R.string.profil_right)
                     binding.title2.text=getString(R.string.profil)
@@ -172,7 +177,8 @@ class Menu : AppCompatActivity() {
                 }
                 else if(offset in 210..220) {//position 11
                     position=3
-                    GlideApp.with(this@Menu).load(R.drawable.leaderboard).into(binding.image)
+                    binding.offset.text="leaderboard"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.poredak_left)
                     binding.title1.text=getString(R.string.poredak_right)
                     binding.title2.text=getString(R.string.poredak)
@@ -183,7 +189,8 @@ class Menu : AppCompatActivity() {
                 }
                 else if(offset in 70..80) { //position 4
                     position=4
-                    GlideApp.with(this@Menu).load(R.drawable.gallery).into(binding.image)
+                    binding.offset.text="gallery"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.galerija_left)
                     binding.title1.text=getString(R.string.galerija_right)
                     binding.title2.text=getString(R.string.galerija)
@@ -194,7 +201,8 @@ class Menu : AppCompatActivity() {
                 }
                 else if(offset in 90..100) { // position 5
                     position=5
-                    GlideApp.with(this@Menu).load(R.drawable.reward).into(binding.image)
+                    binding.offset.text="reward"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.nagrade_left)
                     binding.title1.text=getString(R.string.nagrade_right)
                     binding.title2.text=getString(R.string.nagrade)
@@ -205,7 +213,8 @@ class Menu : AppCompatActivity() {
                 }
                 else if(offset in 110..120) {
                     position=6
-                    GlideApp.with(this@Menu).load(R.drawable.about_app).into(binding.image)
+                    binding.offset.text="about_app"
+                    GlideApp.with(this@Menu).load(imageList[position]).into(binding.image)
                     binding.title.text=getString(R.string.about_left)
                     binding.title1.text=getString(R.string.about_right)
                     binding.title2.text=getString(R.string.about)

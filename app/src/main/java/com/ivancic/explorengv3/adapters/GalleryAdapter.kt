@@ -41,7 +41,8 @@ class GalleryAdapter (
         fun bindItem(marker: Marked, th: Context, currUser: User) {
             val locale = ConfigurationCompat.getLocales(Resources.getSystem().configuration).get(0)!!
             itemBinding.name.text=marker.title
-            itemBinding.description.text = if(locale.language=="hr") marker.desc else marker.descEng
+
+            itemBinding.description.text = if(locale.language=="hr") "Nadmorska visina: ${marker.alt}" else "Altitude: ${marker.alt}"
             itemBinding.dateColected.text = currUser.collectedLocationDates[marker.id]
 
 
