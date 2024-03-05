@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatImageView
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.ivancic.explorengv3.activities.DetailsActivity
 import com.ivancic.explorengv3.activities.DetailsActivity.Companion.currentMarker
 
@@ -224,15 +225,25 @@ class ZoomClass : AppCompatImageView, View.OnTouchListener,
 
         if(velocityY>1200) DetailsActivity.binding.photos2.visibility=View.GONE
         else if(velocityX<-1200) {
+            var gsReference2: StorageReference
             if(DetailsActivity.i!= currentMarker.noImages!!.toInt()) DetailsActivity.i++
-            var gsReference2 = FirebaseStorage.getInstance()
+            else DetailsActivity.i=0
+            if (DetailsActivity.i==0)
+            gsReference2 = FirebaseStorage.getInstance()
+                .getReferenceFromUrl("gs://explore-ng.appspot.com/Markeri/${currentMarker.upimage}/${currentMarker.image}.jpg")
+            else gsReference2 = FirebaseStorage.getInstance()
                 .getReferenceFromUrl("gs://explore-ng.appspot.com/Markeri/${currentMarker.upimage}/${currentMarker.image}${DetailsActivity.i}.jpg")
             GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos)
             GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos2)
         }
         else if (velocityX>1200){
-            if(DetailsActivity.i>1) DetailsActivity.i--
-            var gsReference2 = FirebaseStorage.getInstance()
+            var gsReference2: StorageReference
+            if(DetailsActivity.i>0) DetailsActivity.i--
+            else DetailsActivity.i=currentMarker.noImages!!.toInt()
+            if (DetailsActivity.i==0)
+                gsReference2 = FirebaseStorage.getInstance()
+                    .getReferenceFromUrl("gs://explore-ng.appspot.com/Markeri/${currentMarker.upimage}/${currentMarker.image}.jpg")
+            else gsReference2 = FirebaseStorage.getInstance()
                 .getReferenceFromUrl("gs://explore-ng.appspot.com/Markeri/${currentMarker.upimage}/${currentMarker.image}${DetailsActivity.i}.jpg")
             GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos)
             GlideApp.with(this).load(gsReference2).into(DetailsActivity.binding.photos2)

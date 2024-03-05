@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     buildToolsVersion "21"
 
     namespace 'com.ivancic.explorengv3'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }

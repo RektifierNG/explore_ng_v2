@@ -23,7 +23,6 @@ import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.*
-import com.ivancic.explorengv3.BuildConfig
 import com.ivancic.explorengv3.R
 import com.ivancic.explorengv3.databinding.ActivityMainBinding
 import com.ivancic.explorengv3.models.Marked
@@ -219,6 +218,7 @@ class MainActivity : AppCompatActivity()  {
     private fun setImgDrawable(type: String?): Int {
 
         when (type){
+            "auto"          -> return R.drawable.auto_icon
             "barracks"      -> return R.drawable.barracks_icon
             "brewary"       -> return R.drawable.brewary_icon
             "building"      -> return R.drawable.building_icon

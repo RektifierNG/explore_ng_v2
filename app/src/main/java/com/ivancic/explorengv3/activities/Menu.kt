@@ -2,6 +2,7 @@ package com.ivancic.explorengv3.activities
 
 import android.animation.Animator
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
@@ -89,16 +90,16 @@ class Menu : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         //currUser=LoginActivity.getUser()
-        var imageList= ArrayList <Int>()
+        var imageList= ArrayList <Drawable>()
         imageList.clear()
-        imageList.add(R.drawable.quiz)
-        imageList.add(R.drawable.explore)
-        imageList.add(R.drawable.edit_profile)
-        imageList.add(R.drawable.leaderboard)
-        imageList.add(R.drawable.gallery)
-        imageList.add(R.drawable.reward)
-        imageList.add(R.drawable.about_app)
-        imageList.add(R.drawable.about_project)
+        imageList.add(getDrawable(R.drawable.quiz)!!)
+        imageList.add(getDrawable(R.drawable.explore)!!)
+        imageList.add(getDrawable(R.drawable.edit_profile)!!)
+        imageList.add(getDrawable(R.drawable.leaderboard)!!)
+        imageList.add(getDrawable(R.drawable.gallery)!!)
+        imageList.add(getDrawable(R.drawable.reward)!!)
+        imageList.add(getDrawable(R.drawable.about_app)!!)
+        imageList.add(getDrawable(R.drawable.about_project)!!)
 
         binding.frame.animate().scaleX(0f).scaleY(0f).duration = 1000
         var rotation = AnimationUtils.loadAnimation(this, R.anim.rotate);

@@ -2,6 +2,7 @@ package com.ivancic.explorengv3.adapters
 
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.ConfigurationCompat
@@ -15,7 +16,7 @@ import com.ivancic.explorengv3.models.Marked
 import com.ivancic.explorengv3.models.User
 
 class MenuAdapter (
-    private val imageList: ArrayList<Int>,
+    private val imageList: ArrayList<Drawable>,
     private val th : Context,
     private val listener: (Int) -> Unit
 ) :
@@ -39,7 +40,7 @@ class MenuAdapter (
 
     class ViewHolder(private var itemBinding: MenuItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
-        fun bindItem(image: Int, th: Context) {
+        fun bindItem(image: Drawable, th: Context) {
 
             GlideApp.with(th).load(image).into(itemBinding.image)
 
