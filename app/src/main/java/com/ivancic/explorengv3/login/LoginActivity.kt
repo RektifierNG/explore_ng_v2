@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
     var displayList = ArrayList<User4Leaderboard>()
     private var userId:String=""
+    var poslovniKorisnik:Int=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityLoginNewUiBinding.inflate(layoutInflater)
@@ -43,7 +44,18 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+//napraviti da se poslovni korisnici registriraju kao pk = 1 - dodati u klasu i onda u bazu
+        //neka imaju isti login ali pri register da se registriraju kao jedni ili drugi
+        //promijeniti UI da bude ovisno o ovom parametru
+        binding.CV.setOnClickListener{
+            if (poslovniKorisnik==0) {
+                poslovniKorisnik = 1
 
+            }
+            else {
+                poslovniKorisnik = 0
+            }
+        }
 
         binding.btnLogin.setOnClickListener {
             if (binding.email.text.toString().isEmpty()) Toast.makeText(applicationContext, getString(R.string.unesi_ime), Toast.LENGTH_SHORT).show()

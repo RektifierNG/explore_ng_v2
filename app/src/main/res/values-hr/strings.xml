@@ -89,4 +89,6 @@
     <string name="galerija_right">lokacija</string>
     <string name="about_left">o apl</string>
     <string name="about_right">ikaciji</string>
+    <string name="ClickAbove">Kliknite na sliku gore kako biste se prebacili na poslovne korisnike</string>
+    <string name="privatni_korisnik">Privatni korisnik</string>
 </resources>

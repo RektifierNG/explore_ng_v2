@@ -88,4 +88,6 @@
     <string name="galerija_right">f locations</string>
     <string name="about_left">about ap</string>
     <string name="about_right">plication</string>
+    <string name="ClickAbove">Click the circle above to switch to Business client</string>
+    <string name="privatni_korisnik">Privatni korisnik</string>
 </resources>

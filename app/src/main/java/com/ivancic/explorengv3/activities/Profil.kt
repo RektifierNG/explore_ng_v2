@@ -67,7 +67,7 @@ class Profil : AppCompatActivity() {
                         currUser=v
                         binding.welcome.text=v.name
                         binding.statistika.text=StringBuilder().
-                        append(getString(R.string.location_collection)).append("\n").append(v.collectedLocationNumber).
+                        append(getString(com.ivancic.explorengv3.R.string.location_collection)).append("\n").append(v.collectedLocationNumber).
                         append("\n\n").append(getString(R.string.quizes)).append("\n").append(v.numberOfQuizzes).append("\n\n").
                         append(getString(R.string.quizes2)).append("\n").append(v.avgPointsQuiz).append("\n\n").
                         append(getString(R.string.last)).append("\n").append(v.lastCollectedLocation).append("\n\n").

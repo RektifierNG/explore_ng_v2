@@ -9,7 +9,7 @@ buildscript {
         maven { url "https://mvnrepository.com/artifact/com.google.vr/sdk-base"}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath 'com.android.tools.build:gradle:8.2.0'
         classpath "io.realm:realm-gradle-plugin:10.11.0"
         classpath "gradle.plugin.com.github.b3er.local.properties:local-properties-plugin:1.1"
         classpath 'com.google.gms:google-services:4.4.1'

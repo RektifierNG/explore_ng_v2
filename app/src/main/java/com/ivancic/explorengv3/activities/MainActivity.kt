@@ -65,7 +65,9 @@ class MainActivity : AppCompatActivity()  {
     private lateinit var mapController : IMapController
     private var userId:String=""
     private val database: DatabaseReference =
-        FirebaseDatabase.getInstance("https://explore-ng-default-rtdb.europe-west1.firebasedatabase.app/").getReference("markeri")
+        FirebaseDatabase.
+        getInstance("https://explore-ng-default-rtdb.europe-west1.firebasedatabase.app/").
+        getReference("markeri")
 
     init {
 
